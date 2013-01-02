@@ -12,3 +12,5 @@ C:\Users\Hallo\Documents\GitHub\wohnungssuche\WCF_Host\bin\Debug\WCF_Host.pdb
 C:\Users\Hallo\Documents\GitHub\wohnungssuche\WCF_Host\bin\Debug\WCF_Test.dll
 C:\Users\Hallo\Documents\GitHub\wohnungssuche\WCF_Host\bin\Debug\WCF_Test.pdb
 C:\Users\Hallo\Documents\GitHub\wohnungssuche\WCF_Host\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Hallo\Documents\GitHub\BackgroundWorkerTest\WCF_Host\obj\x86\Debug\WCF_Host.exe
+C:\Users\Hallo\Documents\GitHub\BackgroundWorkerTest\WCF_Host\obj\x86\Debug\WCF_Host.pdb

@@ -13,7 +13,7 @@ namespace WCF_Host
         static void Main(string[] args)
         {
 
-            Uri baseAddress = new Uri("http://localhost:8000/GettingStarted/");
+            Uri baseAddress = new Uri("http://backgroundworkertest.apphb.com:8000/GettingStarted/");
 
             ServiceHost selfHost = new ServiceHost(typeof(Calculator), baseAddress);
 
