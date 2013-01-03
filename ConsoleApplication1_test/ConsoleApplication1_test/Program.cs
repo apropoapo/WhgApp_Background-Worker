@@ -30,6 +30,7 @@ namespace ConsoleApplication1_test
         // The port number for the remote device.
         private const int port = 11000;
 
+        static int blubba = 0;
 
         // ManualResetEvent instances signal completion.
         private static ManualResetEvent connectDone =
@@ -64,7 +65,8 @@ namespace ConsoleApplication1_test
                 connectDone.WaitOne();
 
                 // Send test data to the remote device.
-                Send(client, "This is a test<EOF>");
+             
+                Send(client, "This is the " + blubba + ". test<EOF>");
                 sendDone.WaitOne();
 
                 // Receive the response from the remote device.
@@ -195,6 +197,7 @@ namespace ConsoleApplication1_test
 
         public static int Main(String[] args)
         {
+            blubba++;
             StartClient();
             Console.ReadLine();
             return 0;
