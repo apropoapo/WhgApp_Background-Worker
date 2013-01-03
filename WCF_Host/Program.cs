@@ -17,6 +17,8 @@ namespace WCF_Host
         static void Main(string[] args)
         {
             ConsoleMirror.Initialize();
+            Console.WriteLine("AppHarbor background workers rock! First");
+            logger.Info(ConsoleMirror.Captured);
 
             Uri baseAddress = new Uri("http://backgroundworkertest.apphb.com:8000/GettingStarted/");
 
