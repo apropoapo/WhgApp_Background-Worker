@@ -16,3 +16,9 @@ C:\Users\Hallo\Documents\GitHub\wohnungssuche\WCF_Test\bin\Debug\WCF_Test.pdb
 C:\Users\Hallo\Documents\GitHub\wohnungssuche\WCF_Test\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Hallo\Documents\GitHub\wohnungssuche\WCF_Test\obj\Debug\WCF_Test.dll
 C:\Users\Hallo\Documents\GitHub\wohnungssuche\WCF_Test\obj\Debug\WCF_Test.pdb
+C:\Users\Hallo\Documents\GitHub\BackgroundWorkerTest\WCF_Test\bin\Debug\WCF_Test.dll.config
+C:\Users\Hallo\Documents\GitHub\BackgroundWorkerTest\WCF_Test\bin\Debug\WCF_Test.dll
+C:\Users\Hallo\Documents\GitHub\BackgroundWorkerTest\WCF_Test\bin\Debug\WCF_Test.pdb
+C:\Users\Hallo\Documents\GitHub\BackgroundWorkerTest\WCF_Test\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Hallo\Documents\GitHub\BackgroundWorkerTest\WCF_Test\obj\Debug\WCF_Test.dll
+C:\Users\Hallo\Documents\GitHub\BackgroundWorkerTest\WCF_Test\obj\Debug\WCF_Test.pdb
