@@ -173,7 +173,7 @@ namespace BackgroundWorker
                                 {
                                     ServiceClient client = new ServiceClient();
 
-                                    string Title = "Neue Whg(debug)";
+                                    string Title = "Neue Whg(server)";
                                     string Message = u.newScoutId+"";
 
                                     client.SendToast(Title, Message, u.PushNotificationURI);
