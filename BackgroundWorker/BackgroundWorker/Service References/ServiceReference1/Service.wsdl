@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://wohnungssuche.apphb.com/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://wohnungssuche.apphb.com/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_plusplus_InputMessage">
+    <wsdl:part name="parameters" element="tns:plusplus" />
+  </wsdl:message>
+  <wsdl:message name="IService_plusplus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:plusplusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_addUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:addUser" />
+  </wsdl:message>
+  <wsdl:message name="IService_addUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateUri_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateUri" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateUri_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateUriResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendToast_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendToast" />
+  </wsdl:message>
+  <wsdl:message name="IService_SendToast_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendToastResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="plusplus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/plusplus" message="tns:IService_plusplus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/plusplusResponse" message="tns:IService_plusplus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/addUser" message="tns:IService_addUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/addUserResponse" message="tns:IService_addUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUri">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateUri" message="tns:IService_updateUri_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateUriResponse" message="tns:IService_updateUri_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendToast">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/SendToast" message="tns:IService_SendToast_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/SendToastResponse" message="tns:IService_SendToast_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="plusplus">
+      <soap:operation soapAction="http://tempuri.org/IService/plusplus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addUser">
+      <soap:operation soapAction="http://tempuri.org/IService/addUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUri">
+      <soap:operation soapAction="http://tempuri.org/IService/updateUri" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendToast">
+      <soap:operation soapAction="http://tempuri.org/IService/SendToast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://wohnungssuche.apphb.com/Service.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

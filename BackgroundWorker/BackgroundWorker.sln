@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackgroundWorker", "BackgroundWorker\BackgroundWorker.csproj", "{DCF915C3-3448-4F98-ACB8-6BA618C5E6CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCF915C3-3448-4F98-ACB8-6BA618C5E6CC}.Debug|x86.ActiveCfg = Debug|x86
+		{DCF915C3-3448-4F98-ACB8-6BA618C5E6CC}.Debug|x86.Build.0 = Debug|x86
+		{DCF915C3-3448-4F98-ACB8-6BA618C5E6CC}.Release|x86.ActiveCfg = Release|x86
+		{DCF915C3-3448-4F98-ACB8-6BA618C5E6CC}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

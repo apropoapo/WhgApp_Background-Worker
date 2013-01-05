@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="plusplus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="v1" type="xs:int" />
+        <xs:element minOccurs="0" name="v2" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="plusplusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="plusplusResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="changed" type="xs:int" />
+        <xs:element minOccurs="0" name="PushNotificationUri" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="delete" type="xs:int" />
+        <xs:element minOccurs="0" name="UsePushNotifications" type="xs:int" />
+        <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ImmoscoutURL" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="addUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addUserResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUri">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="changed" type="xs:int" />
+        <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PushNotificationUri" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateUriResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateUriResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendToast">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="PushNotificationUri" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendToastResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
