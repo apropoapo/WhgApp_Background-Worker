@@ -23,14 +23,17 @@ namespace BackgroundWorker
 
                 myUsers.updateUserArray(false);
 
-                string[] sArray = myUsers.checkUsers();
-                foreach (string s in sArray)
-                {
-                    if (s != null)
-                    {
-                        Console.WriteLine(s);
-                    }
-                }
+                //SERVER
+                myUsers.checkUsers();
+                //LOKAL DEBUGGING TEST 
+                //string[] sArray = myUsers.checkUsers();
+                //foreach (string s in sArray)
+                //{
+                //    if (s != null)
+                //    {
+                //        Console.WriteLine(s);
+                //    }
+                //}
 
 
                 Thread.Sleep(10000);

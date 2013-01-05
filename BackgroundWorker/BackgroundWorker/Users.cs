@@ -166,15 +166,15 @@ namespace BackgroundWorker
                             if (u.check() && u.UsePushNotifications == 1)
                             {
                                 //  u.sendPush(); TESTZWECK:
-                                s[i] = "sende push an den " + i + ". User. newCount= " + u.newCount + " newId: " + u.newScoutId + " oldCount= " + u.oldCount + " oldId: " + u.oldScoutId;
+                                s[i] = "push an " + i + ". newCount= " + u.newCount + " newId: " + u.newScoutId + " oldCount= " + u.oldCount + " oldId: " + u.oldScoutId;
 
                                 System.ComponentModel.BackgroundWorker worker = new System.ComponentModel.BackgroundWorker();
                                 worker.DoWork += delegate
                                 {
                                     ServiceClient client = new ServiceClient();
 
-                                    string Title = "Neue Wohnung";
-                                    string Message = "TestNachricht";
+                                    string Title = "Neue Whg(debug)";
+                                    string Message = u.newScoutId+"";
 
                                     client.SendToast(Title, Message, u.PushNotificationURI);
                                     client.Close();      
@@ -189,7 +189,7 @@ namespace BackgroundWorker
                             else
                             {
                                 //testzweck:
-                                s[i] = "sende KEIN push an den " + i + ". User. newCount= " + u.newCount + " newId: " + u.newScoutId + " oldCount= " + u.oldCount + " oldId: " + u.oldScoutId;
+                                s[i] = "KEIN push an " + i + ". newCount= " + u.newCount + " newId: " + u.newScoutId + " oldCount= " + u.oldCount + " oldId: " + u.oldScoutId;
                             }
 
                         }

@@ -42,6 +42,14 @@ namespace BackgroundWorker
             WebClient myWebClient = new WebClient();
             StreamReader sr;
             Stream myStream;
+
+            int anzahlPosi;
+           string zeile = "fail";
+             string anzahl = "noch nix";
+           string such = "data";
+            string suchAnzahl = "aktuelle Angebote";
+            string suchZeileAnzahl = "highlight\">";
+
             try
             {
                 myStream = myWebClient.OpenRead(ImmoscoutURL);
@@ -50,10 +58,7 @@ namespace BackgroundWorker
                 oldCount = newCount;
                 oldScoutId = newScoutId;
 
-                string zeile = "fail";
-                string anzahl = "noch nix";
-                string such = "data";
-                string suchAnzahl = "aktuelle Angebote";
+
                 int abbrechVar = -1;
 
                 while (abbrechVar < 0)
@@ -69,8 +74,23 @@ namespace BackgroundWorker
                     }
                 }
 
+                // extrahiert die Anzahl-Zahl aus dem anzahl-String heraus
+                anzahlPosi = anzahl.IndexOf(suchZeileAnzahl) + suchZeileAnzahl.Length;
+                string anzahlZahlString = "";
+                int i = 0;
+                while (anzahl[anzahlPosi + i] != '<')
+                {
+                    anzahlZahlString += anzahl[anzahlPosi + i];
+                    i++;
+                }
+                newCount = int.Parse(anzahlZahlString);
+
+
+                // extrahiert die Scoutid aus dem zeile-String
                 newScoutId = int.Parse(zeile.Substring(46, 8));
-                newCount = int.Parse(anzahl.Substring(69, 2));
+
+
+                
                 sr.Close();
                 myStream.Close();
                 return true;
@@ -78,6 +98,12 @@ namespace BackgroundWorker
             catch (System.Net.WebException e)
             {
 
+                return false;
+            }
+            catch (FormatException e)
+            {
+
+                Console.WriteLine(e.Message);
                 return false;
             }
         }
