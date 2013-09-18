@@ -4,3 +4,6 @@ C:\Users\Hallo\Documents\GitHub\WhgApp_Background-Worker\BackgroundWorker\Backgr
 C:\Users\Hallo\Documents\GitHub\WhgApp_Background-Worker\BackgroundWorker\BackgroundWorker\obj\x86\Debug\BackgroundWorker.exe
 C:\Users\Hallo\Documents\GitHub\WhgApp_Background-Worker\BackgroundWorker\BackgroundWorker\obj\x86\Debug\BackgroundWorker.pdb
 C:\Users\Hallo\Documents\GitHub\WhgApp_Background-Worker\BackgroundWorker\BackgroundWorker\bin\Debug\BackgroundWorker.exe.config
+C:\Users\Hallo\Documents\GitHub\WhgApp_Background-Worker\BackgroundWorker\BackgroundWorker\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Hallo\Documents\GitHub\WhgApp_Background-Worker\BackgroundWorker\BackgroundWorker\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Hallo\Documents\GitHub\WhgApp_Background-Worker\BackgroundWorker\BackgroundWorker\bin\Debug\HtmlAgilityPack.xml

@@ -12,7 +12,7 @@ namespace BackgroundWorker
 {
     class Users
     {
-        const string CONSTRING = "Server=instance29437.db.xeround.com;Port=19153;Database=users;Uid=appharbor;Pwd=NNDKjRzh";
+        const string CONSTRING = "server=8a1732a4-5501-4f63-ae2f-a213015171ab.mysql.sequelizer.com;database=db8a1732a455014f63ae2fa213015171ab;uid=tvzwzpkdytttjbtm;pwd=LZDsGqmDUXQBiRJrfALZZCZmiWgwBZgi4JYdu4pBNzgg467pjBP4z4Ki8rjSjWc4";
         public User[] userArray = new User[100000];
         public int count;
         public int max = 0;
@@ -46,15 +46,19 @@ namespace BackgroundWorker
                 {
                     DataRow dr = dataRowC[i];
 
-                    int changed = (int)dr["changed"];
+                    SByte changed = (SByte)dr[3];
+
+               //     Console.WriteLine(
+                //    dr.Table.Columns["changed"].DataType);
+
                     if (changed == 1 || init)
                     {
 
                         // frägt daten ab
                         int id = (int)dr["ID"];
-                        string pushURI = (string)dr["PushNotificationURI"];
-                        int delete = (int)dr["delete"];
-                        int usePush = (int)dr["UsePushNotifications"];
+                        string pushURI = (string)dr["PushNotificationUri"];
+                        SByte delete = (SByte)dr["deleted"];
+                        SByte usePush = (SByte)dr["UsePushNotifications"];
                         string immoURL = (string)dr["ImmoscoutURL"];
 
                         // max id rausfinden
@@ -74,7 +78,7 @@ namespace BackgroundWorker
                 }
             }
 
-            catch (IndexOutOfRangeException e)
+            catch (IndexOutOfRangeException)
             {
                 count = i;
             }
@@ -161,35 +165,24 @@ namespace BackgroundWorker
                     }
                     else
                     {
-                        if (u.updateResults())
+                        if (u.UsePushNotifications == 1 && u.updateResults())
                         {
-                            if (u.check() && u.UsePushNotifications == 1)
+                            if (u.check())
                             {
-                                //  u.sendPush(); TESTZWECK:
-                                s[i] = "push an " + i + ". newCount= " + u.newCount + " newId: " + u.newScoutId + " oldCount= " + u.oldCount + " oldId: " + u.oldScoutId;
+                                // TESTZWECK:
+                                s[i] = "push an " + i + ". newId: " + u.newScoutId + " oldId: " + u.oldScoutId;
 
-                                System.ComponentModel.BackgroundWorker worker = new System.ComponentModel.BackgroundWorker();
-                                worker.DoWork += delegate
-                                {
-                                    ServiceClient client = new ServiceClient();
 
-                                    string Title = "Neue Whg(server)";
-                                    string Message = u.newScoutId+"";
-
-                                    client.SendToast(Title, Message, u.PushNotificationURI);
-                                    client.Close();      
-
-                                };
-                                worker.RunWorkerAsync();
-
-                                Console.WriteLine("Push gesendet");
+                                // Toast wird gesendet
+                                if (u.sendPush())
+                                    Console.WriteLine("Push gesendet");
 
 
                             }
                             else
                             {
                                 //testzweck:
-                                s[i] = "KEIN push an " + i + ". newCount= " + u.newCount + " newId: " + u.newScoutId + " oldCount= " + u.oldCount + " oldId: " + u.oldScoutId;
+                                s[i] = "KEIN push an " + i + ". newId: " + u.newScoutId + " oldId: " + u.oldScoutId;
                             }
 
                         }

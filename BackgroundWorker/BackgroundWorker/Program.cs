@@ -11,7 +11,7 @@ namespace BackgroundWorker
     {
         static void Main(string[] args)
         {
-            long i = 0;
+
             Users myUsers = new Users();
             bool exit = false;
 
@@ -24,16 +24,16 @@ namespace BackgroundWorker
                 myUsers.updateUserArray(false);
 
                 //SERVER
-                myUsers.checkUsers();
+                //myUsers.checkUsers();
                 //LOKAL DEBUGGING TEST 
-                //string[] sArray = myUsers.checkUsers();
-                //foreach (string s in sArray)
-                //{
-                //    if (s != null)
-                //    {
-                //        Console.WriteLine(s);
-                //    }
-                //}
+                string[] sArray = myUsers.checkUsers();
+                foreach (string s in sArray)
+                {
+                    if (s != null)
+                    {
+                        Console.WriteLine(s);
+                    }
+                }
 
 
                 Thread.Sleep(10000);
